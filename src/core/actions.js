@@ -10,10 +10,15 @@ const selectInput = ({ data }) => ({
 	text: data,
 });
 
+const setSwitch = ({ data }) => ({
+	switch: data,
+});
+
 const actions = {
 	increaseCount,
 	setFontSize,
 	selectInput,
+	setSwitch,
 };
 
 export default actions;
