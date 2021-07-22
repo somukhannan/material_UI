@@ -1,7 +1,27 @@
-const sampleService = () => ({
-	sayHai: () => console.log('Hi!'), // eslint-disable-line no-console
-});
+import context from '../core/context';
 
-const SampleService = sampleService();
+const productChecked = (productsList, product) =>
+	productsList.map((data) =>
+		(product.Id !== data.Id
+			? {
+				...data,
+				isChecked: false,
+			}
+			: {
+				...data,
+				isChecked: true,
+			}));
+
+const selectedProduct = () =>
+	context.state.productsList.filter((data) => data.isChecked !== false);
+
+const getList = () =>
+	context.state.SelectedList;
+
+const SampleService = {
+	productChecked,
+	selectedProduct,
+	getList,
+};
 
 export default SampleService;

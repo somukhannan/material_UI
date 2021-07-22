@@ -9,6 +9,8 @@ const seed = {
 	fontSize: 10,
 	text: config.texts[0],
 	switch: false,
+	productsList: config.productsDetails,
+	selectedList: [],
 };
 
 export default seed;
